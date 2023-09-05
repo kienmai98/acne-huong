@@ -26,14 +26,16 @@ export default function Navigation({ items }: NavigationProps) {
               <Link href={item.href}>{item.title}</Link>
             </NavigationMenuTrigger>
 
-            <NavigationMenuContent
-              className="absolute flex flex-col gap-4 border border-neutral-200 p-8 min-w-[300px] mt-2 z-[999] bg-light"
-              inlist={false}
-            >
-              {item.navItems?.map((e) => (
-                <NavigationItem key={e.href} href={e.href} label={e.title} />
-              ))}
-            </NavigationMenuContent>
+            {Number(item.navItems?.length) > 0 && (
+              <NavigationMenuContent
+                className="absolute flex flex-col gap-4 border border-neutral-200 p-8 min-w-[300px] mt-2 z-[999] bg-light"
+                inlist={false}
+              >
+                {item.navItems?.map((e) => (
+                  <NavigationItem key={e.href} href={e.href} label={e.title} />
+                ))}
+              </NavigationMenuContent>
+            )}
           </NavigationMenuItem>
         ))}
       </NavigationMenuList>

@@ -1,22 +1,22 @@
-import axios from "axios";
-import { toast } from "react-hot-toast";
-import queryString from 'query-string';
-import { API_SERVER } from "../config/constant";
-import webStorage from "../utils/webStorage";
-
+import axios from 'axios'
+import queryString from 'query-string'
+import { API_SERVER } from '../config/constant'
+import webStorage from '../utils/webStorage'
 
 const baseApiConfig = {
   baseURL: `${API_SERVER}`,
   headers: {
-    "content-type": "application/json",
+    'content-type': 'application/json',
   },
   timeout: 600000, // 600s = 10 mins
-  paramsSerializer: (params) => queryString.stringify(params),
-};
+  paramsSerializer: {
+    serialize: queryString.stringify,
+  },
+}
 
-const SESSION_EXPIRED_STATUS_CODE = 401;
+const SESSION_EXPIRED_STATUS_CODE = 401
 
-const baseApiClient = axios.create(baseApiConfig);
+const baseApiClient = axios.create(baseApiConfig)
 
 const request = ({
   enableFlashMessageError = true,
@@ -25,33 +25,33 @@ const request = ({
   ...options
 }) => {
   if (isAuth) {
-    const accessToken = webStorage.getToken();
-    baseApiClient.defaults.headers.common.Authorization = `Bearer ${accessToken}`;
+    const accessToken = webStorage.getToken()
+    baseApiClient.defaults.headers.common.Authorization = `Bearer ${accessToken}`
   }
 
   const onSuccess = (response) => {
     if (enableFlashMessageSuccess) {
-      toast.success("Yêu cầu được xử lý thành công!");
+      // toast.success("Yêu cầu được xử lý thành công!");
     }
-    return response;
-  };
+    return response
+  }
 
   const onError = (error) => {
     if (
       error?.response?.status !== SESSION_EXPIRED_STATUS_CODE &&
       enableFlashMessageError
     ) {
-      toast.error("Yêu cầu xử lí thất bại!");
+      // toast.error("Yêu cầu xử lí thất bại!");
     }
 
     if (error?.response?.status === SESSION_EXPIRED_STATUS_CODE) {
-      webStorage.remove();
+      webStorage.remove()
     }
 
-    return Promise.reject(error.response);
-  };
+    return Promise.reject(error.response)
+  }
 
-  return baseApiClient(options).then(onSuccess).catch(onError);
-};
+  return baseApiClient(options).then(onSuccess).catch(onError)
+}
 
-export default request;
+export default request

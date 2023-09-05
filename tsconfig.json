@@ -39,7 +39,9 @@
     ".next/types/**/*.ts",
     "src/config/constant.js",
     "src/services/video/category.js",
-    "src/components/VideoPlay/index.jsx"
+    "src/components/VideoPlay/index.jsx",
+    "src/components/Card/VideoCard.jsx",
+    "src/components/videos/NewestVideos.tsx"
   ],
   "exclude": ["node_modules", "**/*.test.ts", "**/*.cy.ts"]
 }

@@ -10,7 +10,8 @@ import { useGetDataById } from 'hooks/useGetDataById'
 import { postComment } from 'hooks/usePostComment'
 import { useGetData } from 'hooks/useGetData'
 import Reply from 'components/reply'
-import VideoCard from 'components/videos/VideoCard'
+import VideoCard from 'components/Card/VideoCard'
+import LazyImage from 'components/common/LazyImage'
 import styles from './styles.module.scss'
 import { formatDate } from '../../../../services/video/video'
 import Comment from '../../../../components/comment'
@@ -32,7 +33,7 @@ const Video = () => {
     url: `api/comments/items/${id}`,
   })
 
-  const { data: videoData, loading: loadingVideo } = useGetData({
+  const { data: videoData } = useGetData({
     url: 'api/items',
   })
 
@@ -64,7 +65,7 @@ const Video = () => {
                 justify="space-between"
               >
                 <Col md={24} xs={24} className={cx('video__thumbnail')}>
-                  <img
+                  <LazyImage
                     src={data?.data?.thumbnail?.path}
                     alt={data?.data?.title}
                     className={cx('video__thumbnail')}
@@ -118,8 +119,8 @@ const Video = () => {
               Related Videos
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-1 gap-2">
-              {videoData?.slice(0, 3)?.map((video: any, idx: any) => (
-                <VideoCard video={video} loading={loadingVideo} key={idx} />
+              {videoData?.slice(0, 3)?.map((video: any) => (
+                <VideoCard {...video} key={video._id} />
               ))}
             </div>
           </Col>

@@ -7,7 +7,7 @@ import VideoItem from './VideoItem'
 type VideoListProps = {
   categories?: any
   videos: any
-  onChangePage: (newPage: number) => void
+  onChangePage?: (newPage: number) => void
   pagination?: {
     nextPage: number
     page: number
@@ -16,7 +16,7 @@ type VideoListProps = {
     total: number
     totalPages: number
   }
-  loadingVideo: boolean
+  loadingVideo?: boolean
   title: string
 }
 
@@ -25,7 +25,7 @@ export function VideoListPage({
   videos,
   onChangePage,
   pagination,
-  loadingVideo,
+  loadingVideo = false,
   title,
 }: VideoListProps) {
   const [activeCategory, setActiveCategory] = useState<string | null>(

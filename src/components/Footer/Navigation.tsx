@@ -38,8 +38,8 @@ const NAVIGATIONS: { title: string; items: NavigationItemType[] }[] = [
 export default function Navigation() {
   return (
     <div className="grid grid-cols-4 items-center justify-between gap-20 px-8">
-      {NAVIGATIONS.map((i) => (
-        <div className="col-span-1" key={i.title}>
+      {NAVIGATIONS.map((i, index) => (
+        <div className="col-span-1" key={index}>
           <NavigationItem title={i.title} items={i.items} />
         </div>
       ))}
