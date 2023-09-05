@@ -1,6 +1,7 @@
 'use client'
 
 import { useRequest, useSetState } from 'ahooks'
+import { CacheKey } from 'config/cache-key'
 import { getListApi } from 'services/video/video'
 
 export function useTrendingVideos() {
@@ -13,6 +14,7 @@ export function useTrendingVideos() {
   })
 
   const { data, loading } = useRequest(() => getListApi(filter), {
+    cacheKey: CacheKey.TRENDING_VIDEOS,
     refreshDeps: [filter],
   })
 

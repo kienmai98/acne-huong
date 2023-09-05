@@ -2,14 +2,14 @@ import { PAGE_SIZE } from 'constants/video.constants'
 import { getListApi } from 'services/video/video'
 import VideoItem from './VideoItem'
 
-async function getData() {
+async function getNewestVideos() {
   const res = await getListApi({ pageSize: PAGE_SIZE, page: 1 })
 
   return res?.data?.data ?? []
 }
 
 export default async function NewestVideos() {
-  const data = await getData()
+  const newestVideos = await getNewestVideos()
 
   return (
     <div>
@@ -17,7 +17,7 @@ export default async function NewestVideos() {
         NEWEST VIDEOS
       </p>
 
-      <VideoItem videos={data} />
+      <VideoItem videos={newestVideos} />
     </div>
   )
 }

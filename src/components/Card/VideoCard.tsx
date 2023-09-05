@@ -9,8 +9,8 @@ import {
   trackWindowScroll,
 } from 'react-lazy-load-image-component'
 import { ReactNode } from 'react'
-import { Box } from 'components/Box'
 import Link from 'next/link'
+import { hashVideoTitleToUrl } from 'utils/convertToUrl'
 import styles from './VideoCard.module.scss'
 
 interface VideoCardProps {
@@ -43,7 +43,7 @@ const VideoCard = ({
   return (
     <LazyLoadComponent scrollPosition={scrollPosition}>
       <Link
-        href={`/videos/${_id}`}
+        href={`/videos/${_id}/${hashVideoTitleToUrl(title as string)}`}
         className={`${styles.card} ${hasBorder ? styles.hasBorder : ''}`}
       >
         <LazyImage
@@ -63,10 +63,8 @@ const VideoCard = ({
         <div className={styles.card__content}>
           <h4 className={styles.card__title}>{title}</h4>
           <p className={styles.card__views}>
-            <Box className="mr-1">
-              <EyeFilled rev={undefined} />
-            </Box>
-            {views ?? 0}
+            <EyeFilled rev={undefined} />
+            <div>{views ?? 0}</div>
           </p>
         </div>
       </Link>

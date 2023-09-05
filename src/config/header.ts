@@ -13,16 +13,6 @@ export const docsConfig: DocsConfig = {
     {
       href: 'videos',
       title: 'Videos',
-      navItems: [
-        {
-          href: 'trending-videos',
-          title: 'Trending Videos',
-        },
-        {
-          href: 'newest-videos',
-          title: 'Newest Videos',
-        },
-      ],
     },
     {
       href: 'services',

@@ -13,8 +13,8 @@ import Reply from 'components/reply'
 import VideoCard from 'components/Card/VideoCard'
 import LazyImage from 'components/common/LazyImage'
 import styles from './styles.module.scss'
-import { formatDate } from '../../../../services/video/video'
-import Comment from '../../../../components/comment'
+import { formatDate } from '../../../../../services/video/video'
+import Comment from '../../../../../components/comment'
 
 const cx = classNames.bind(styles)
 
@@ -25,6 +25,7 @@ const Video = () => {
   const { data } = useGetDataById({
     url: `api/items/${id}`,
   })
+
   const {
     data: commentData,
     loading: loadingComment,

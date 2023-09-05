@@ -28,7 +28,7 @@ export default function TrendingVideos() {
 
   return (
     <div ref={ref}>
-      <div className="flex items-center justify-between  mb-5">
+      <div className="flex items-center justify-between mb-5">
         <p className="uppercase text-3xl font-sans font-bold tracking-wide flex-1">
           TRENDING VIDEOS
         </p>
@@ -55,7 +55,7 @@ export default function TrendingVideos() {
         )}
 
         {!!total && (
-          <div className="w-full grid place-items-center">
+          <div className="w-full grid place-items-center mt-5">
             <Pagination
               current={filter.page}
               total={total}
