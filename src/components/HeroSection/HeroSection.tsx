@@ -1,4 +1,4 @@
-import Wave from 'components/Dashboard/Wave'
+import { Wave } from 'components/Dashboard/Wave'
 import Image from 'next/image'
 
 interface HeroSectionProps {
@@ -15,7 +15,7 @@ export function HeroSection({ description, image, title }: HeroSectionProps) {
       <div className="absolute z-10 inset-0 bg-neutral-800/70" />
 
       <div className="z-10 absolute w-full flex items-center justify-center left-0 bottom-0">
-        <Wave className="min-w-[calc(100%+143px)]" />
+        <Wave />
       </div>
 
       <div className="flex flex-col items-center gap-y-4 z-20 justify-center w-full h-full absolute -top-20">

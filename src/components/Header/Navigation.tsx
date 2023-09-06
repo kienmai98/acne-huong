@@ -18,25 +18,31 @@ export default function Navigation({ items }: NavigationProps) {
     <NavigationMenu orientation="horizontal">
       <NavigationMenuList className="flex">
         {items.map((item) => (
-          <NavigationMenuItem
-            key={item.href}
-            className="hover:bg-primary hover:text-white"
-          >
-            <NavigationMenuTrigger className="text-xs tracking-[0.3rem] transition-colors duration-300 hover:bg-primary hover:text-white">
-              <Link href={item.href}>{item.title}</Link>
-            </NavigationMenuTrigger>
+          <Link href={item.href}>
+            <NavigationMenuItem
+              key={item.href}
+              className="hover:bg-primary hover:text-white"
+            >
+              <NavigationMenuTrigger className="text-xs tracking-[0.3rem] transition-colors duration-300 hover:bg-primary hover:text-white">
+                {item.title}
+              </NavigationMenuTrigger>
 
-            {Number(item.navItems?.length) > 0 && (
-              <NavigationMenuContent
-                className="absolute flex flex-col gap-4 border border-neutral-200 p-8 min-w-[300px] mt-2 z-[999] bg-light"
-                inlist={false}
-              >
-                {item.navItems?.map((e) => (
-                  <NavigationItem key={e.href} href={e.href} label={e.title} />
-                ))}
-              </NavigationMenuContent>
-            )}
-          </NavigationMenuItem>
+              {Number(item.navItems?.length) > 0 && (
+                <NavigationMenuContent
+                  className="absolute flex flex-col gap-4 border border-neutral-200 p-8 min-w-[300px] mt-2 z-[999] bg-light"
+                  inlist={false}
+                >
+                  {item.navItems?.map((e) => (
+                    <NavigationItem
+                      key={e.href}
+                      href={e.href}
+                      label={e.title}
+                    />
+                  ))}
+                </NavigationMenuContent>
+              )}
+            </NavigationMenuItem>
+          </Link>
         ))}
       </NavigationMenuList>
     </NavigationMenu>

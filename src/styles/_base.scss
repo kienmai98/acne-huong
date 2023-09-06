@@ -2,12 +2,14 @@
 
 @font-face {
   font-family: 'IvyMode';
-  src: local('IvyMode'), url('../public/fonts/IvyMode/SVN-IvyMode-Bold.otf') format('truetype');
+  src: local('IvyMode'),
+    url('../public/fonts/IvyMode/SVN-IvyMode-Bold.otf') format('truetype');
   font-weight: bold;
 }
 @font-face {
   font-family: 'IvyMode';
-  src: local('IvyMode'), url('../public/fonts/IvyMode/SVN-IvyMode-Regular.otf') format('truetype');
+  src: local('IvyMode'),
+    url('../public/fonts/IvyMode/SVN-IvyMode-Regular.otf') format('truetype');
   font-weight: normal;
 }
 

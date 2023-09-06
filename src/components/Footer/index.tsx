@@ -6,20 +6,19 @@ import {
   YoutubeIcon,
 } from 'lucide-react'
 import Navigation from './Navigation'
-import Logo from '../common/Logo'
 
 export function Footer() {
   return (
     <div className="bg-primary pt-20 pb-32 px-36 flex justify-between">
       <div className="flex flex-col gap-4 text-white text-xl">
         <div className="flex items-center gap-3 mb-2">
-          <Logo isFooter />
+          Acnehuong Spa & Treatment
         </div>
         <span className="text-neutral-300 text-xs">
-          198 West 21th Street, NY, the USA
+          7 Mộc Bài 1, Hoà Khánh Nam, Liên Chiểu, Đà Nẵng, Vietnam.
         </span>
         <span className="text-neutral-300 text-xs">
-          2-847-567-5765 | M: spacenter@rela.com
+          090.477.1370 | trungsymedia@gmail.com
         </span>
         <span className="flex items-center gap-4 my-8">
           <TwitterIcon
@@ -44,6 +43,7 @@ export function Footer() {
           />
         </span>
       </div>
+
       <div>
         <Navigation />
       </div>

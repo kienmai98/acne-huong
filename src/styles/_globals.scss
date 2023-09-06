@@ -81,10 +81,16 @@ p {
       line-height: 22px;
     }
   }
-  .ant-form-item-label > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
+  .ant-form-item-label
+    > label.ant-form-item-required:not(
+      .ant-form-item-required-mark-optional
+    )::before {
     content: '';
   }
-  .ant-form-item-label > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::after {
+  .ant-form-item-label
+    > label.ant-form-item-required:not(
+      .ant-form-item-required-mark-optional
+    )::after {
     display: inline-block;
     margin-right: 4px;
     color: #ff4d4f;
@@ -230,7 +236,10 @@ p {
   .ant-pagination-options {
     margin-left: 8px;
   }
-  .ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  .ant-select-focused:not(.ant-select-disabled).ant-select:not(
+      .ant-select-customize-input
+    )
+    .ant-select-selector {
     border-color: #e7e5e4;
     box-shadow: none;
   }
@@ -509,7 +518,9 @@ p {
   }
   .ant-table-thead
     > tr
-    > th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
+    > th:not(:last-child):not(.ant-table-selection-column):not(
+      .ant-table-row-expand-icon-cell
+    ):not([colspan])::before {
     width: 0;
   }
   .ant-table-thead tr th {

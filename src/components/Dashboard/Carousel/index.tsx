@@ -4,7 +4,6 @@ import { MoveLeftIcon, MoveRightIcon } from 'lucide-react'
 import Image from 'next/legacy/image'
 import { useRef } from 'react'
 import Slider, { Settings } from 'react-slick'
-import Wave from '../Wave'
 import CarouselLabel from './CarouselLabel'
 
 export default function Carousel() {
@@ -23,10 +22,6 @@ export default function Carousel() {
 
   return (
     <div className="z-1 relative">
-      <div className="z-50 absolute w-full flex items-center justify-center left-0 bottom-0 overflow-hidden">
-        <Wave className="min-w-[calc(100%+143px)]" />
-      </div>
-
       <MoveLeftIcon
         className="absolute left-0 z-40 text-white ml-20 cursor-pointer top-1/2"
         size={28}
@@ -34,6 +29,7 @@ export default function Carousel() {
           ref.current?.slickPrev()
         }}
       />
+
       <MoveRightIcon
         className="absolute right-0 z-40 text-white mr-20 cursor-pointer top-1/2"
         size={28}
@@ -42,8 +38,8 @@ export default function Carousel() {
         }}
       />
 
-      <Slider ref={ref} className="h-full" {...settings}>
-        <div className="relative w-screen h-[672px]">
+      <Slider ref={ref} className="h-[50rem]" {...settings}>
+        <div className="relative w-screen h-[50rem]">
           <div className="flex items-center absolute justify-center w-full h-full z-40">
             <CarouselLabel
               title="Therapy & Health"
@@ -54,11 +50,12 @@ export default function Carousel() {
           <Image
             src="/images/home-img.jpeg"
             layout="fill"
-            alt=""
+            alt="img"
             objectFit="cover"
           />
         </div>
-        <div className="relative w-screen h-[672px]">
+
+        <div className="relative w-screen h-[50rem]">
           <div className="flex items-center absolute justify-center w-full h-full z-40">
             <CarouselLabel
               title="Relax & Wellness"
@@ -78,7 +75,7 @@ export default function Carousel() {
           />
         </div>
 
-        <div className="relative w-screen h-[672px]">
+        <div className="relative w-screen h-[50rem]">
           <div className="flex items-center absolute justify-center w-full h-full z-40">
             <CarouselLabel
               title="Spa & Beauty"

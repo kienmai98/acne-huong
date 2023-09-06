@@ -1,17 +1,16 @@
-export default function Wave({ className }: { className?: string }) {
+export function Wave() {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 1000 100"
-      preserveAspectRatio="none"
-      className={className}
-    >
-      <path
-        fill="#e6fce9"
-        className="rotate-180 origin-center"
-        // class="elementor-shape-fill"
-        d="M1000,4.3V0H0v4.3C0.9,23.1,126.7,99.2,500,100S1000,22.7,1000,4.3z"
-      />
-    </svg>
+    <div style={{ width: '100%', height: '18rem', overflow: 'hidden' }}>
+      <svg
+        viewBox="0 0 500 150"
+        preserveAspectRatio="none"
+        style={{ height: '100%', width: '100%' }}
+      >
+        <path
+          d="M-0.62,101.03 C204.37,31.04 269.37,26.03 500.62,100.04 L500.00,150.00 L0.00,150.00 Z"
+          style={{ stroke: 'none', fill: '#e6fce9' }}
+        />
+      </svg>
+    </div>
   )
 }

@@ -4,7 +4,7 @@ import { ServiceCardItem } from 'components/Dashboard/Services/ServiceCard'
 export const ServiceConfig: ServiceCardItem[] = [
   {
     id: '1',
-    title: 'Acne treatment',
+    title: 'Acne Treatment',
     description:
       'Eliminate bad conditions for the skin bad conditions for the skin',
     icon: (
@@ -20,7 +20,7 @@ export const ServiceConfig: ServiceCardItem[] = [
   },
   {
     id: '2',
-    title: 'Face massages',
+    title: 'Face Massages',
     description: 'The treatment that helps you relax your face.',
     icon: (
       <Image
