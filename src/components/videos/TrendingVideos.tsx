@@ -6,7 +6,7 @@ import { useRef } from 'react'
 import { twMerge } from 'tailwind-merge'
 import { useGetCategories } from 'hooks/useGetCategories'
 import { Box } from 'components/Box'
-import { Input, Pagination, Skeleton } from 'antd'
+import { Pagination, Skeleton } from 'antd'
 import VideoItem from './VideoItem'
 
 export default function TrendingVideos() {
@@ -18,7 +18,6 @@ export default function TrendingVideos() {
     handleChangeCategory,
     total,
     handleChangePage,
-    handleChangeSearch,
     loading,
   } = useTrendingVideos()
 
@@ -32,12 +31,12 @@ export default function TrendingVideos() {
         <p className="uppercase text-3xl font-sans font-bold tracking-wide flex-1">
           TRENDING VIDEOS
         </p>
-        <Input.Search
+        {/* <Input.Search
           className="w-[300px]"
           size="large"
           placeholder="Find Video..."
           onSearch={handleChangeSearch}
-        />
+        /> */}
       </div>
 
       <div className="mb-4">
