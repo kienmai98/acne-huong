@@ -1,9 +1,10 @@
 import request from '../request'
 
-export const getCategoriesApi = () =>
+export const getCategoriesApi = async (params) =>
   request({
     url: '/api/categories',
     method: 'GET',
+    params,
   })
 
 export const getCategoryApi = (id) =>

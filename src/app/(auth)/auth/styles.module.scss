@@ -1,0 +1,43 @@
+.authWrapper {
+  max-width: 1128px;
+  padding: 70px 0 100px 0;
+  margin: 0 auto;
+}
+
+.authTab {
+  :global(.ant-tabs-nav) {
+    margin: 0;
+    background-color: #f8f8f8;
+  }
+  :global(.ant-tabs-nav-list) {
+    justify-content: space-evenly;
+    width: 100%;
+  }
+  :global(.ant-tabs-tab) {
+    flex: 0.5;
+    justify-content: center;
+    padding: 16px 0;
+  }
+  :global(.ant-tabs-tab-btn) {
+    font-size: 18px;
+    font-weight: 500;
+    color: #a2a3a5;
+    text-transform: uppercase;
+  }
+  :global(.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn) {
+    color: #121212;
+  }
+  :global(.ant-tabs-tab + .ant-tabs-tab) {
+    margin: 0;
+    color: #ddd;
+  }
+  :global(.ant-tabs-ink-bar) {
+    height: 1px;
+    background-color: #ffc72c;
+  }
+  :global(.ant-tabs-nav-more) {
+    @media screen and (max-width: 1440px) {
+      display: none;
+    }
+  }
+}

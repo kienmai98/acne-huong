@@ -4,6 +4,7 @@ import '../styles/index.css'
 import { siteConfig } from 'config/site'
 import { Old_Standard_TT } from 'next/font/google'
 import { cn } from 'libs'
+import AuthProvider from 'contexts/auth'
 
 const oldStandardTT = Old_Standard_TT({
   weight: '400',
@@ -42,7 +43,9 @@ export default function RootLayout({
       lang="en"
     >
       <head />
-      <body className="min-h-screen">{children}</body>
+      <body className="min-h-screen">
+        <AuthProvider>{children}</AuthProvider>
+      </body>
       <script
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2346085669058627"

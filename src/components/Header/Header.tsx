@@ -7,7 +7,7 @@ import Logo from '../common/Logo'
 
 export function Header() {
   return (
-    <header className="">
+    <header>
       <TopBar />
       <div className="p-4 px-6 flex justify-between items-center">
         <div className="flex justify-center items-center gap-2">

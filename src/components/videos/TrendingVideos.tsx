@@ -73,15 +73,9 @@ export default function TrendingVideos() {
 function Categories({ onSelectCategory, selectedCategory }: any) {
   const { categories } = useGetCategories()
 
-  const options =
-    categories?.map(({ title, _id }: any) => ({
-      label: title,
-      value: _id,
-    })) ?? []
-
   return (
     <div className="flex gap-3 flex-wrap sm:flex-nowrap">
-      {[{ label: 'All', value: '' }, ...options].map(
+      {[{ label: 'All', value: '' }, ...categories].map(
         ({ label, value }: any) => (
           <Box
             as="span"

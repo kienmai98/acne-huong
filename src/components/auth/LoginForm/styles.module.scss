@@ -1,0 +1,60 @@
+.formLogin {
+  background: #f8f8f8;
+  padding: 3rem;
+  min-width: 576px;
+
+  :global(.ant-form-item) {
+    margin-bottom: 16px;
+  }
+  &Input {
+    height: 64px;
+    border-color: transparent;
+    background-color: #fff;
+
+    &Forgot {
+      font-style: italic;
+      font-size: 14px;
+      text-decoration-line: underline;
+    }
+    &Buttons {
+      flex: 1;
+      height: 48px;
+      background: transparent;
+      flex-flow: nowrap;
+      border-color: #ededed;
+    }
+    &MiddleItem {
+      margin: 0 8px;
+    }
+    &Radio {
+      :global(.ant-radio-inner) {
+        background-color: transparent;
+        border-color: #121212;
+      }
+    }
+  }
+}
+
+.login {
+  &Button {
+    width: 100%;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    height: fit-content;
+    background: #ffc72c;
+    font-weight: 700;
+    color: #121212;
+    border-color: transparent;
+
+    &Wrap {
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  &Or {
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
