@@ -1,5 +1,3 @@
-'use client'
-
 import { Box } from 'components/Box'
 import { Text } from 'components/Text'
 import Carousel from 'components/Dashboard/Carousel'
@@ -11,7 +9,7 @@ import { TrendingCarousel } from 'components/TrendingCarousel/TrendingCarousel'
 import { ServiceConfig } from 'config/service'
 import Image from 'next/image'
 
-export default async function Page() {
+export default function Page() {
   return (
     <div className="bg-light min-h-screen h-full flex flex-col">
       <Carousel />

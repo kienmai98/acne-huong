@@ -1,3 +1,5 @@
+'use client'
+
 import { Box } from 'components/Box'
 import { Heading } from 'components/Heading'
 import { Skeleton } from 'components/Skeleton'

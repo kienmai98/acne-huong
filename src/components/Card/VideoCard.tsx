@@ -21,6 +21,7 @@ interface VideoCardProps {
   views: any
   hasBorder?: boolean
   scrollPosition: ScrollPosition
+  hasContent?: boolean
 }
 
 const VideoCard = ({
@@ -31,6 +32,7 @@ const VideoCard = ({
   views,
   hasBorder = false,
   scrollPosition,
+  hasContent = true,
 }: VideoCardProps) => {
   const handleMouseOver = (e: any) => {
     e.target.play()
@@ -60,13 +62,15 @@ const VideoCard = ({
           src={video}
         />
 
-        <div className={styles.card__content}>
-          <h4 className={styles.card__title}>{title}</h4>
-          <p className={styles.card__views}>
-            <EyeFilled rev={undefined} />
-            <div>{views ?? 0}</div>
-          </p>
-        </div>
+        {hasContent && (
+          <div className={styles.card__content}>
+            <h4 className={styles.card__title}>{title}</h4>
+            <p className={styles.card__views}>
+              <EyeFilled rev={undefined} />
+              <div>{views ?? 0}</div>
+            </p>
+          </div>
+        )}
       </Link>
     </LazyLoadComponent>
   )

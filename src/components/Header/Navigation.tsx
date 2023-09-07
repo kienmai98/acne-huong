@@ -17,12 +17,9 @@ export default function Navigation({ items }: NavigationProps) {
   return (
     <NavigationMenu orientation="horizontal">
       <NavigationMenuList className="flex">
-        {items.map((item) => (
-          <Link href={item.href}>
-            <NavigationMenuItem
-              key={item.href}
-              className="hover:bg-primary hover:text-white"
-            >
+        {items.map((item, index) => (
+          <Link key={index} href={item.href}>
+            <NavigationMenuItem className="hover:bg-primary hover:text-white">
               <NavigationMenuTrigger className="text-xs tracking-[0.3rem] transition-colors duration-300 hover:bg-primary hover:text-white">
                 {item.title}
               </NavigationMenuTrigger>

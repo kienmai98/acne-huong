@@ -17,10 +17,10 @@ export default function NavigationItem({ items = [], title }: Props) {
         {title}
       </span>
       <span className="flex flex-col gap-4 text-sm">
-        {items.map((item) => (
+        {items.map((item, index) => (
           <Link
             href={item.href}
-            key={item.label}
+            key={index}
             className="text-neutral-300 font-light hover:text-primary"
           >
             {item.label}

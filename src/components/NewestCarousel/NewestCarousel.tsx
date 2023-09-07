@@ -1,3 +1,5 @@
+'use client'
+
 import { Box } from 'components/Box'
 import { Heading } from 'components/Heading'
 import { Skeleton } from 'components/Skeleton'
@@ -6,6 +8,7 @@ import { useNewestVideos } from 'hooks/useNewestVideos'
 
 export default function NewestVideos() {
   const { loading, videos } = useNewestVideos()
+
   return (
     <Box className="space-y-4">
       <Heading as="h1" className="text-primary">

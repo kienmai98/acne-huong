@@ -6,8 +6,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import Slider from 'react-slick'
 import { useRef } from 'react'
 import { styled } from 'styled-components'
-import Link from 'next/link'
-import { hashVideoTitleToUrl } from 'utils/convertToUrl'
+import VideoCard from 'components/Card/VideoCard'
 
 interface ReactSliderProps {
   videoData: any
@@ -54,22 +53,8 @@ export function ReactSlider({ videoData }: ReactSliderProps) {
       />
 
       <StyledSlider ref={ref} {...settings}>
-        {videoData.map((video: any, index: number) => (
-          <Box key={index} className="cursor-pointer">
-            <Link
-              href={`/videos/${video._id}/${hashVideoTitleToUrl(video.title)}`}
-            >
-              <Box className="relative mx-auto w-full h-60 hover:scale-105 hover:z-50 transition duration-300">
-                <img
-                  className="object-cover h-full"
-                  src={video?.thumbnail || '/images/thumbnail.jpg'}
-                  alt={video.title}
-                />
-
-                <div className="inset-0 absolute bg-primary/20 z-20" />
-              </Box>
-            </Link>
-          </Box>
+        {videoData.map((video: any) => (
+          <VideoCard {...video} key={video._id} hasContent={false} />
         ))}
       </StyledSlider>
     </Box>
